@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body.register-background {
+            background-image: url('/static/FondoLogin.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centra el texto en el contenedor */
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase; /* Convierte el texto de la etiqueta en mayúsculas */
+        }
+    
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%; /* Ajusta el ancho del botón al 100% del contenedor */
+        }
+
+        .login-link {
+            margin-top: 20px; /* Ajusta el espacio superior */
+        }
+
+        .login-link a {
+            color: #007bff; /* Color del enlace */
+            text-decoration: none; /* Quita el subrayado del enlace */
+        }
+    </style>
+    
+</head>
+<body class="register-background">
+    <div class="container">
+        <h1>REGISTRO</h1>
+        <form method="POST" action="{{ url_for('register') }}">
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario" required><br>
+        
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" required><br>
+        
+            <button type="submit">Registrar</button>
+        </form>
+        <!-- Enlace para iniciar sesión -->
+        <p class="login-link">¿Ya tienes una cuenta? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>
